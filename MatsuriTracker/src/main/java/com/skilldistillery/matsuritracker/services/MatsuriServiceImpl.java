@@ -32,11 +32,6 @@ public class MatsuriServiceImpl implements MatsuriService {
 
 	@Override
 	public Matsuri create(Matsuri matsuri) {
-//		matsuri.setName("Enter Matsuri Name");
-//		matsuri.setDate("Enter Matsuri Date");
-//		matsuri.setFood("Enter Food Served");
-//		matsuri.setPresents(false);
-//		matsuri.setReason("Enter Reason for the Season");
 
 		return matRepo.saveAndFlush(matsuri);
 	}

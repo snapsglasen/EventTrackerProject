@@ -15,10 +15,11 @@ This app tracks the end of my family's holiday season in 2022; specifically, thi
 | DELETE    | `/api/matsuris/{id}`     |                           |                 | **Delete** route |
 
 
-### TODO!!! URL OF DEPLOYED APP
+##URL
+54.219.13.112:8080/MatsuriTracker/
 
 ## Tech Used
 Java, JPA, MySql Workbench, Postman, SpringBoot, REST
 
 ## Lessons Learned
-This project gave me a first person view on how REST works with a simple table, while also showing how much less verbose it is to work with over using a DAO and JSPs. 
+This project gave me a first person view on how REST works with a simple table, while also showing how much less verbose it is to work with over using a DAO and JSPs.
