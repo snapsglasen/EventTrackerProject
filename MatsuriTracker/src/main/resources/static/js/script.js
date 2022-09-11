@@ -94,7 +94,8 @@ let tbody = document.querySelector('#eventList>table>tbody');
 		tr.appendChild(td);
 		tr.addEventListener('click', function(evt){
 			evt.preventDefault();
-			console.log('Selected matsuri ' + matsuri.id);
+			let matsuriJson = JSON.stringify(matsuri);
+			console.log('Selected matsuri ' + matsuriJson);
 		});
 	
 	}
@@ -220,33 +221,4 @@ function updateMatsuri(matsuriId) {
 
 }
 
-function displayRecipes(eventList) {
-	let tbody = document.querySelector('#eventList>table>tbody');
-	tbody.textContent = '';
-	for (let matsuri of eventList) {
-		let tr = document.createElement('tr');
-		tbody.appendChild(tr);
-		let td = document.createElement('td');
-		td.textContent = matsuri.id;
-		tr.appendChild(td);
-		td = document.createElement('td');
-		td.textContent = matsuri.name;
-		tr.appendChild(td);
-		td = document.createElement('td');
-		td.textContent = matsuri.reason;
-		tr.appendChild(td);
-		td = document.createElement('td');
-		td.textContent = matsuri.food;
-		tr.appendChild(td);
-		td = document.createElement('td');
-		td.textContent = matsuri.date;
-		tr.appendChild(td);
-		td = document.createElement('td');
-		td.textContent = matsuri.presents;
-		tr.appendChild(td);
-		tr.addEventListener('click', function(evt){
-			console.log('Selected matsuri ' + matsuri.id);
-		});
-	}
-}
 
