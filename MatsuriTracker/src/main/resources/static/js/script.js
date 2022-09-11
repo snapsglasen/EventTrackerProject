@@ -61,15 +61,42 @@ function loadAllEvents() {
 }
 
 function displayEvents(matsuriList) {
-	let dataDiv = document.getElementById("eventList");
-	dataDiv.textContent = '';
-	let ul = document.createElement('ul');
-	dataDiv.appendChild(ul);
+//	let dataDiv = document.getElementById("eventList");
+//	dataDiv.textContent = '';
+//	let ul = document.createElement('ul');
+//	dataDiv.appendChild(ul);
+//	for (let matsuri of matsuriList) {
+//		let li = document.createElement('li');
+//		li.textContent = matsuri.name;
+//		ul.appendChild(li);
+let tbody = document.querySelector('#eventList>table>tbody');
+	tbody.textContent = '';
 	for (let matsuri of matsuriList) {
-		let li = document.createElement('li');
-		li.textContent = matsuri.name;
-		ul.appendChild(li);
-
+		let tr = document.createElement('tr');
+		tbody.appendChild(tr);
+		let td = document.createElement('td');
+		td.textContent = matsuri.id;
+		tr.appendChild(td);
+		td = document.createElement('td');
+		td.textContent = matsuri.name;
+		tr.appendChild(td);
+		td = document.createElement('td');
+		td.textContent = matsuri.reason;
+		tr.appendChild(td);
+		td = document.createElement('td');
+		td.textContent = matsuri.food;
+		tr.appendChild(td);
+		td = document.createElement('td');
+		td.textContent = matsuri.date;
+		tr.appendChild(td);
+		td = document.createElement('td');
+		td.textContent = matsuri.presents;
+		tr.appendChild(td);
+		tr.addEventListener('click', function(evt){
+			evt.preventDefault();
+			console.log('Selected matsuri ' + matsuri.id);
+		});
+	
 	}
 }
 
@@ -193,35 +220,33 @@ function updateMatsuri(matsuriId) {
 
 }
 
-//function updateMatsuri(e) {
-//   e.preventDefault();
-//   let matsuri= {}
-               
-//		matsuri.name = addMatsuriForm.name.value;
-//		matsuri.reason = addMatsuriForm.reason.value;
-//		matsuri.food = addMatsuriForm.food.value;
-//		matsuri.date = addMatsuriForm.date.value;
-//		matsuri.presents = addMatsuriForm.presents.value;
-		
-//    console.log(matsuri)
-//    let xhr = new XMLHttpRequest();
-//   xhr.open('PATCH', 'api/matsuris/' + document.updateMatsuriForm.id.value, true);
-    
- //   xhr.setRequestHeader("Content-type", "application/json");
-    
- //   xhr.onreadystatechange = function() {
-//        if (xhr.readyState === 4) {
-//          if (xhr.status == 200 || xhr.status == 201) {
- //               let matsuri = JSON.parse(xhr.responseText);
- //               console.log(matsuri);
-//               displayMatsuri(matsuri);
-//            }
-//            else {
- //              console.error("POST request failed.");
-//                console.error(xhr.status + ": " + xhr.responseText);
-//            }
-//        }
-//    };
-//    xhr.send(JSON.stringify(matsuri));
-//}
+function displayRecipes(eventList) {
+	let tbody = document.querySelector('#eventList>table>tbody');
+	tbody.textContent = '';
+	for (let matsuri of eventList) {
+		let tr = document.createElement('tr');
+		tbody.appendChild(tr);
+		let td = document.createElement('td');
+		td.textContent = matsuri.id;
+		tr.appendChild(td);
+		td = document.createElement('td');
+		td.textContent = matsuri.name;
+		tr.appendChild(td);
+		td = document.createElement('td');
+		td.textContent = matsuri.reason;
+		tr.appendChild(td);
+		td = document.createElement('td');
+		td.textContent = matsuri.food;
+		tr.appendChild(td);
+		td = document.createElement('td');
+		td.textContent = matsuri.date;
+		tr.appendChild(td);
+		td = document.createElement('td');
+		td.textContent = matsuri.presents;
+		tr.appendChild(td);
+		tr.addEventListener('click', function(evt){
+			console.log('Selected matsuri ' + matsuri.id);
+		});
+	}
+}
 

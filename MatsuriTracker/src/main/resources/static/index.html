@@ -15,6 +15,7 @@
 
 <div id="updateDiv">
 <form name="updateMatsuriForm">
+
 <label for="matsuriId">Existing Matsuri ID</label>
 <input type="number" name="matsuriId"><br>
 <label for="name">Name</label> <input type="text" name="name"><br>
@@ -29,10 +30,27 @@
 				<option value="true">Yes</option>
 			</select>
 <button name="update">Update Matsuri</button>
+
 </form>
 </div>
 
-	<div id="eventList"></div>
+	<div id="eventList">
+		
+		<table class="table table-striped table-hover">
+			<thead class="table-light">
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Reason for the Season</th>
+					<th>Food Served</th>
+					<th>General Date</th>
+					<th>Are Presents Given?</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+
+	</div>
 	
 	<form name="matsuriForm">
 	<input type="number" name="matsuriId">
