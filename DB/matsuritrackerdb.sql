@@ -23,6 +23,10 @@ DROP TABLE IF EXISTS `matsuri` ;
 CREATE TABLE IF NOT EXISTS `matsuri` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
+  `reason` TEXT(100) NOT NULL,
+  `food` TEXT(200) NOT NULL,
+  `date` VARCHAR(45) NOT NULL,
+  `presents` TINYINT NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -46,3 +50,16 @@ GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'matsuriuser'@'local
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Data for table `matsuri`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `palmermatsuridb`;
+INSERT INTO `matsuri` (`id`, `name`, `reason`, `food`, `date`, `presents`) VALUES (1, 'Obon', 'Ancestors Return', 'sanmainikku, konbu, burdock, fish cake, fried tofu, and mochi for dessert', 'Late Jul-Aug Lunisolar Calendar', true);
+INSERT INTO `matsuri` (`id`, `name`, `reason`, `food`, `date`, `presents`) VALUES (2, 'Shiori\'s Bday', 'Birthday', 'chosen pasta type with scone and icecream for dessert', 'September 19', true);
+INSERT INTO `matsuri` (`id`, `name`, `reason`, `food`, `date`, `presents`) VALUES (3, 'Thanksgiving', 'American Tradition', 'slow cooked turkey, mashed potatoes, stuffing, gibblet gravy, cranberry sauce, and candied yams for dessert', 'Fourth Thursday in Nov', false);
+INSERT INTO `matsuri` (`id`, `name`, `reason`, `food`, `date`, `presents`) VALUES (4, 'Halloween', 'American Tradition', 'enough candy to rot teeth', 'October 31', false);
+
+COMMIT;
+

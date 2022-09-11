@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Matsuri Tracker</title>
+<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+
+	<h1>Irasshaimase</h1>
+
+<div id="matsuriData">
+
+</div>
+
+<div id="updateDiv">
+<form name="updateMatsuriForm">
+<label for="matsuriId">Existing Matsuri ID</label>
+<input type="number" name="matsuriId"><br>
+<label for="name">Name</label> <input type="text" name="name"><br>
+			<label for="reason">Reason for Season</label>
+			<textarea rows="3" cols="40" name="reason"></textarea>
+			<br> <label for="food">Food Served</label>
+			<textarea rows="3" cols="40" name="food"></textarea>
+			<br> <label for="date">Date of Holiday</label> <input
+				type="text" name="date"><br> <label for="presents">Are
+				Presents given?</label> <select name="presents">
+				<option value="false">No</option>
+				<option value="true">Yes</option>
+			</select>
+<button name="update">Update Matsuri</button>
+</form>
+</div>
+
+	<div id="eventList"></div>
+	
+	<form name="matsuriForm">
+	<input type="number" name="matsuriId">
+	<button name="lookup">Get Matsuri by ID</button>
+	<button name="delete">Delete Matsuri</button>
+	
+	</form>
+	
+	
+
+	<div>
+		<form name="addMatsuriForm">
+
+			<label for="name">Name</label> <input type="text" name="name"><br>
+			<label for="reason">Reason for Season</label>
+			<textarea rows="3" cols="40" name="reason"></textarea>
+			<br> <label for="food">Food Served</label>
+			<textarea rows="3" cols="40" name="food"></textarea>
+			<br> <label for="date">Date of Holiday</label> <input
+				type="text" name="date"><br> <label for="presents">Are
+				Presents given?</label> <select name="presents">
+				<option value="false">No</option>
+				<option value="true">Yes</option>
+			</select>
+			
+			<button name="addMatsuri">Add Matsuri</button>
+
+		</form>
+
+	</div>
+</body>
+</html>
