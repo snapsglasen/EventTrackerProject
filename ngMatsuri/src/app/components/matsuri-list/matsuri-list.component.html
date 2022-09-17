@@ -1,0 +1,35 @@
+<form>
+  ID: <br> <input type="text" name="id" [(ngModel)]="newMatsuri.id"><br>
+  Name:<br> <input type="text" name="name" [(ngModel)]="newMatsuri.name"><br>
+  Reason for the Season: <br><input type="text" name="reason" [(ngModel)]="newMatsuri.reason"><br>
+  Food Served: <br><input type="text" name="food" [(ngModel)]="newMatsuri.food"><br>
+  General Date: <br><input type="text" name="date" [(ngModel)]="newMatsuri.date"><br>
+  Presents Given: <br> <input type="checkbox" name="presents" [(ngModel)]="newMatsuri.presents"><br>
+  <button (click)="createMatsuri(newMatsuri)">Add Matsuri</button>
+
+  </form>
+  <!-- <span (click)="selectedType = type" *ngFor="let type of types">{{type}} | </span> -->
+  <table>
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Name</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mats of matsuris" (click)="viewDetails(mats)">
+        <td>{{mats.id}}</td>
+        <td>{{mats.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="selected">
+  <p>{{selected.id}}</p>
+  <p>{{selected.name}}</p>
+  <p>{{selected.reason}}</p>
+  <p>{{selected.food}}</p>
+  <p>{{selected.date}}</p>
+  <p>{{selected.presents}}</p>
+  <button (click)="selected=null">Back</button>
+  </div>
