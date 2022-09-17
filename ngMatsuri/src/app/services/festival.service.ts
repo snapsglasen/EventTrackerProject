@@ -38,4 +38,32 @@ export class FestivalService {
     );
   }
 
+  update(matsuri: Matsuri) {
+
+    return this.http.patch<Matsuri>(this.url + '/' + matsuri.id, matsuri).pipe(
+      catchError((err: any) => {
+        console.log(err);
+        return throwError(
+          () => new Error(
+            'FestivalService.update():error updating Matsuri: ' + err
+          )
+        );
+      })
+     );
+  }
+
+
+  destroy(id: number) {
+    return this.http.delete<void>(this.url + '/' + id).pipe(
+      catchError((err: any) => {
+        console.log(err);
+        return throwError(
+          () => new Error(
+            'FestivalService.destroy():error deleting Todo: ' + err
+          )
+        );
+      })
+     );
+  }
+
 }

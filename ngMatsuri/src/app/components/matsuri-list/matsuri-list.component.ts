@@ -55,4 +55,48 @@ export class MatsuriListComponent implements OnInit {
       }
     )
   }
+
+  reload() {
+    this.festServ.index().subscribe({
+      next: (matsuris) => {
+        this.matsuris = matsuris;
+      },
+      error: (err) => {
+        console.error('MatsuriListComponent.reload(): error retrieving matsuris');
+        console.error(err);
+      },
+    });
+  }
+
+  updateMatsuri(matsuri: Matsuri, setSelected = true): void {
+    this.festServ.update(matsuri).subscribe({
+      next: (matsuri) => {
+        this.reload();
+        // this.editTodo = null;
+        if (setSelected) {
+          this.selected = matsuri;
+        }
+      },
+      error: (bad) => {
+        console.error('MatsuriListComponent.updateMatsuri(): error updating matsuri');
+        console.error(bad);
+      },
+    });
+  }
+
+  deleteMatsuri(id: number): void {
+    this.festServ.destroy(id).subscribe({
+      next: (good) => {
+        this.reload();
+      },
+      error: (bad) => {
+        console.error('MatsuriListComponent.deleteMatsuri(): error deleting matsuri');
+        console.error(bad);
+      },
+    });
+  }
+
+  setEditMatsuri(): void {
+    this.editMatsuri = Object.assign({}, this.selected);
+  }
 }

@@ -25,11 +25,40 @@
   </table>
 
   <div *ngIf="selected">
-  <p>{{selected.id}}</p>
-  <p>{{selected.name}}</p>
-  <p>{{selected.reason}}</p>
-  <p>{{selected.food}}</p>
-  <p>{{selected.date}}</p>
-  <p>{{selected.presents}}</p>
-  <button (click)="selected=null">Back</button>
+  <p>Matsuri ID #: {{selected.id}}</p>
+  <p>Name of Matsuri: {{selected.name}}</p>
+  <p>Reason for the Season: {{selected.reason}}</p>
+  <p>Food Served: {{selected.food}}</p>
+  <p>Date: {{selected.date}}</p>
+  <p>Presents are given: {{selected.presents}}</p>
+  <button (click)="selected=null">Back</button> <br>
+  <button (click)="setEditMatsuri()" class="btn btn-outline-primary">Edit</button>
+  <button (click)="deleteMatsuri(selected.id)" class="btn btn-danger">Delete</button>
+  </div>
+
+  <div id="matsuriEdit" *ngIf="editMatsuri">
+    <form>
+      <div class="form-group">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" name="name" [(ngModel)]="editMatsuri.name" class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="reason" class="form-label">Reason for the Season</label>
+      <input type="text" name="reason" [(ngModel)]="editMatsuri.reason"  class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="date" class="form-label">General Date</label>
+      <input type="text" name="date" [(ngModel)]="editMatsuri.date"  class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="food" class="form-label">Food Served</label>
+      <input type="text" name="food" [(ngModel)]="editMatsuri.food"  class="form-control"/>
+    </div>
+    <div class="form-check">
+      <label for="presents" class="form-check-label">Presents Given</label>
+      <input type="checkbox" name="presents" [(ngModel)]="editMatsuri.presents"  class="form-check-input"/>
+    </div>
+      <button (click)="editMatsuri = null" class="btn btn-danger">Cancel</button>
+      <button (click)="updateMatsuri(editMatsuri)" class="btn btn-success">Save</button>
+    </form>
   </div>
