@@ -9,7 +9,7 @@
 
   </form>
   <!-- <span (click)="selectedType = type" *ngFor="let type of types">{{type}} | </span> -->
-  <table>
+  <table class="styled-table">
     <thead>
       <tr>
         <td>ID</td>
@@ -31,7 +31,7 @@
   <p>Food Served: {{selected.food}}</p>
   <p>Date: {{selected.date}}</p>
   <p>Presents are given: {{selected.presents}}</p>
-  <button (click)="selected=null">Back</button> <br>
+  <button (click)="selected=null" class="btn btn-danger">Back</button>
   <button (click)="setEditMatsuri()" class="btn btn-outline-primary">Edit</button>
   <button (click)="deleteMatsuri(selected.id)" class="btn btn-danger">Delete</button>
   </div>
