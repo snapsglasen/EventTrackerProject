@@ -19,10 +19,13 @@ This app tracks the end of my family's holiday season in 2022; specifically, thi
 54.219.13.112:8080/MatsuriTracker/
 
 ## Tech Used
-Java, JPA, MySql Workbench, Postman, SpringBoot, REST, JavaScript, HTML, XMLHttpRequest, AJAX, DOM, JSON
+Java, JPA, MySql Workbench, Postman, SpringBoot, REST, JavaScript, HTML, XMLHttpRequest, AJAX, DOM, JSON, Angular, TypeScript
 
 ## Lessons Learned (Part1)
 This project gave me a first person view on how REST works with a simple table, while also showing how much less verbose it is to work with over using a DAO and JSPs.
 
 ## Lessons Learned (Part2)
 Implementing the front end via XHR was an indispensable, though incredibly difficult, learning experience. Having to traverse the DOM through newly learned JavaScript functions and consuming the pathways of the preset REST project half took the vast majority of my time. In the end, it gave me an unshakeable understanding of how basic CRUD works, although beyond that is still hazy, but workable. Setting up a dynamic table in order to print an objects fields in JSON to the browser developer tools' console was a lot let tricky than I expected, and I'm happy to have the experience.
+
+## Lessons Learned (Part3)
+Adapting this program to Angular for the front end was confusing but accomplished through a lot of copy and pasting from previous projects of the same week in class. This gave me a stable basic understanding of the routing between model, component, and service in Angular via typescript. I will continue to use this app to play around with different ideas in order to advance my learning in TS and this API.

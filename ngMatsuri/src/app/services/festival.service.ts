@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
@@ -8,7 +9,7 @@ import { Matsuri } from '../models/matsuri';
 })
 export class FestivalService {
   private baseUrl = 'http://localhost:8086/'; // adjust port to match server
-  private url = this.baseUrl + 'api/matsuris'; // change 'todos' to your API path
+  private url = environment.baseUrl + 'api/matsuris'; // change 'todos' to your API path
 
   constructor(
     private http: HttpClient
